@@ -26,9 +26,9 @@ void bubblesort (int sortsize, int *array, int order) {
     for (int i=0; i<sortsize; i++) {
 	for (int j=i+1; j<sortsize; j++) {
 	    if ((*(array + j)*order) < (*(array + i)*order)) {
-		int swp = *(array + i);
-		*(array + i) = *(array + j);
-		*(array + j) = swp;
+		*(array + i) += *(array + j);
+		*(array + j) = *(array + i) - *(array + j);
+		*(array + i) -= *(array + j);
 	    }
 	}
     }
