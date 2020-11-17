@@ -1,4 +1,4 @@
-# Minh Nguyen (s3877222)'s OpenRMIT repository
+# OpenRMIT
 
 **OpenRMIT** is inspired by the idea of Free and Open-Source Sofware (FOSS), where Free means Freedom, not Free Beer. FOSS allows you to view its source code, modify that source code to suit your needs, and redistribute the source code as well as the software.
 
