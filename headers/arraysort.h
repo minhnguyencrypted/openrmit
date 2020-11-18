@@ -24,16 +24,14 @@
 		    [WARNING]:	Inappropiate argument might cause unwanted function behaviour. Keep that in mind.
 */
 
-//Bubble sort function
 void bubblesort (int sortsize, int* array, int order);
-//Selection sort function
 void selectionsort (int sortsize, int* array, int order);
+void insertionsort (int sortsize, int* array, int order);
 
 //FUNCTION DEFINITIONS
-//Bubble sort function 
 void bubblesort (int sortsize, int* array, int order) {
     int sorder = 0;
-    if (order > 0)  sorder = 1; else sorder = -1;    //To avoid memory overflows, array element multiplier should be either 1 or -1
+    if (order > 0)  sorder = 1; else sorder = -1;   
     for (int i=0; i<sortsize; i++) {
 	for (int j=i+1; j<sortsize; j++) {
 	    //If former array element is greater than the latter, swap their position
@@ -46,22 +44,42 @@ void bubblesort (int sortsize, int* array, int order) {
     }
 }
 
-//Selection sort function
+
 void selectionsort (int sortsize, int* array, int order) {
     int sorder = 0;
-    if (order > 0)  sorder = 1; else sorder = -1;    //To avoid memory overflows, array element multiplier should be either 1 or -1
+    if (order > 0)  sorder = 1; else sorder = -1;    
     for (int i=0; i<sortsize; i++) {
 	int slcelem = i;
 	for (int j=i+1; j<sortsize; j++) {
 	    if (
-		    (*(array + j)*sorder < *(array + i)*sorder) //If the former array element is greater than the latter 
-		    && (*(array + j)*sorder < *(array + slcelem)*sorder)   //And the latter one is less than the current selected element
-	    ) slcelem = j; //Select current j-th element		
+		    (*(array + j)*sorder < *(array + i)*sorder)		    //If the former array element is greater than the latter 
+		    && (*(array + j)*sorder < *(array + slcelem)*sorder)    //And the latter one is less than the current selected element
+	    ) slcelem = j;  //Select current j-th element		
 	}
 	if (slcelem != i) {
 	    *(array + i) += *(array + slcelem);
 	    *(array + slcelem) = *(array + i) - *(array + slcelem);
 	    *(array + i) -= *(array + slcelem);
+	}
+    }
+}
+
+
+void insertionsort (int sortsize, int* array, int order) {
+    int sorder = 0;
+    if (order > 0)  sorder = 1; else sorder = -1;    
+    for (int i=1; i<sortsize; i++) {
+	int inspos = i;	    //Insert position
+	while (
+	    (*(array + inspos - 1)*sorder > *(array + i)*sorder)    //Finding the largest element less than and prior to the current element
+	    && (inspos>0)   //Segfault prevention
+	) inspos--; 
+	if (inspos != i) {  //If current element is not in sorted order, perform insertion
+	    for (int j=inspos; j<i; j++) {  //Insert and Shift elements to the right	 
+		*(array + i) += *(array + j);
+		*(array + j) = *(array + i) - *(array + j);
+		*(array + i) -= *(array + j);
+	    }
 	}
     }
 }
