@@ -1,5 +1,4 @@
-//Header file (*.h)
-//Array of Intergers Sorting functions 
+//Integer Array sorting functions Header file.
 //Written by Minh N. Nguyen 
 //Licensed under GNU General Public License v3.0, visit https://www.gnu.org/licenses/gpl-3.0.en.html for more info
 
@@ -17,11 +16,7 @@
 //Bubble sort function
 void bubblesort (int sortsize, int* array, int order);
 //Selection sort function
-void selection (int sortsize, int* array, int order);
-
-//Functions definitions
-//Damn, none of 'em are pure
-//#saveHaskell
+void selectionsort (int sortsize, int* array, int order);
 
 //Bubble sort function 
 void bubblesort (int sortsize, int* array, int order) {
