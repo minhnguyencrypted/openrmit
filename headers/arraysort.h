@@ -2,15 +2,26 @@
 //Written by Minh N. Nguyen 
 //Licensed under GNU General Public License v3.0, visit https://www.gnu.org/licenses/gpl-3.0.en.html for more info
 
+//HEADER FILE USAGE
+/*     
+    Put this header file in a subdirectory where your code you want to include the header is located. (Preferably header/ directory)
+    Add the line below to the #include path of your C code
+	#include "header/arraysort.h" 
+    The name path to the directory of the header file might vary according to where your header is, for example:
+	"arraysort.h" if you put the head file in the same directory of your code.
+	"<your-directory-name>/arraysort.h" if you put the header file in your custom-named directory.
+*/
+
 #include <stdio.h>
 
-//Functions declarations
+//FUNCTION DECLARATIONS
 /*
-    Technically, functions should take these arguments, repectively:
-	int sortsize: the number of elements to be sorted, starting from array pointer.
-	int* array: the pointer to the initial elements of a sequence of an array.
-	int order: the integer indicates the order of the sort (positive value for ascending and negative value for descending).
-		   An inappropriate integer choice may cause unwanted function behaviour, keep that in mind.
+    Each function should follow this convention of function arguments, respectively:
+	int sortsize: the length of the array sequence to be sorted.
+	int* array: the pointer to the initial element of the sequence.
+	int order:  the integer argument represents the sorting order (ascending/descending).
+		    Positive number represents ascending order, and vice versa.
+		    [WARNING]:	Inappropiate argument might cause unwanted function behaviour. Keep that in mind.
 */
 
 //Bubble sort function
@@ -18,6 +29,7 @@ void bubblesort (int sortsize, int* array, int order);
 //Selection sort function
 void selectionsort (int sortsize, int* array, int order);
 
+//FUNCTION DEFINITIONS
 //Bubble sort function 
 void bubblesort (int sortsize, int* array, int order) {
     int sorder = 0;
