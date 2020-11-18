@@ -12,11 +12,11 @@ If you have installed Git, run this in a command line:
 git clone https://github.com/minhnguyencrypted/openrmit
 ```
 
-Otherwise, you can download the source code [here](https://github.com/minhnguyencrypted/openrmit/archive/main.zip) (ZIP).
+Otherwise, you can download the ZIP file of the repository [here](https://github.com/minhnguyencrypted/openrmit/archive/main.zip).
 
 ## Building the source files
 
-You can use any decent C compiler to compile the source code e.g. for GCC:
+You can use any decent C compiler to compile the source code e.g. for GNU Compiler Collection (GCC):
 
 ```bash
 gcc -o [your_output_file] [source_file]
@@ -31,4 +31,4 @@ We welcome contributions from everyone! Here are the ways you can help:
 
 ## License
 
-[GNU GPL v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
+This Repository is licensed under GNU General Public License v3.0, click [here](https://www.gnu.org/licenses/gpl-3.0.en.html) for more information.
