@@ -36,9 +36,9 @@ void bubblesort (int sortsize, int* array, int order) {
 	for (int j=i+1; j<sortsize; j++) {
 	    //If former array element is greater than the latter, swap their position
 	    if ((*(array + j)*sorder) < (*(array + i)*sorder)) {
-		*(array + i) += *(array + j);
-		*(array + j) = *(array + i) - *(array + j);
-		*(array + i) -= *(array + j);
+		int swp = *(array + i);
+		*(array + i) = *(array + j);
+		*(array + j) = swp;
 	    }
 	}
     }
@@ -57,9 +57,9 @@ void selectionsort (int sortsize, int* array, int order) {
 	    ) slcelem = j;  //Select current j-th element		
 	}
 	if (slcelem != i) {
-	    *(array + i) += *(array + slcelem);
-	    *(array + slcelem) = *(array + i) - *(array + slcelem);
-	    *(array + i) -= *(array + slcelem);
+	    int swp = *(array + i);
+	    *(array + i) = *(array + slcelem);
+	    *(array + slcelem) = swp;
 	}
     }
 }
@@ -76,9 +76,9 @@ void insertionsort (int sortsize, int* array, int order) {
 	) inspos--; 
 	if (inspos != i) {  //If current element is not in sorted order, perform insertion
 	    for (int j=inspos; j<i; j++) {  //Insert and Shift elements to the right	 
-		*(array + i) += *(array + j);
-		*(array + j) = *(array + i) - *(array + j);
-		*(array + i) -= *(array + j);
+		int swp = *(array + i);
+		*(array + i) = *(array + j);
+		*(array + j) = swp;
 	    }
 	}
     }
